@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>$http Promises</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+    <style>
+        .descriptionheader {
+            padding: 10px 20px;
+            background: lightsteelblue;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body ng-app="app">
+   
+    <aside class="descriptionheader">
+        This sample demonstrates using $http Promises to notify an Angular controller
+        of updated data.
+    </aside>
+
+
+    <div class="container" ng-controller="albumsController as view" style="padding: 20px;">
+            
+        <div class="btn-group" data-toggle="buttons-radio">
+            
+            <button type="button" id="simpleMode" name="simpleMode"
+                    value="true" data-toggle="button" ng-class="{active: view.simpleMode}"
+                    class="btn btn-primary" ng-click="view.toggleSimpleMode(true)">
+                Plain $http
+            </button>                
+            <button type="button" id="simpleMode" name="simpleMode"
+                    value="false" class="btn btn-primary"
+                    ng-class="{active: !view.simpleMode}"
+                    ng-click="view.toggleSimpleMode(false)">
+                Wrapper Promise
+            </button>
+        </div>
+              {{view.albums}}
+              {{view.albums1}}
+              {{}}
+
+
+        
+        <form>
+  <div class="container">
+    <label><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" ng-model ='info.email' name="email" required>
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password"  ng-model ='info.pass' name="psw" required>
+
+    {{info}}
+
+    <div class="clearfix">
+      <button type="button"  class="cancelbtn">Cancel</button>
+      <button   ng-click ='saveinfo(info)'type="submit" class="signupbtn">Sign Up</button>
+    </div>
+  </div>
+</form>
+        
+        
+        
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
+     <script src="app.js"></script>
+
+	<script src="script.js"></script>
+    <script src="factory.js"></script>
+
+</body>
+</html>
